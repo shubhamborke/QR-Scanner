@@ -14,9 +14,9 @@
 
             // Reference number: first 13 characters, adding (-) before FG
             let referenceNumber = qrData.substring(0, 13);
-            if (referenceNumber.includes("FG")) {
+            
                 referenceNumber = referenceNumber.substring(0,7) + "-" + referenceNumber.substring(7);
-            }
+            
 
             // Best Before Date: positions 14-17 (0-indexed: 13-16)
             let bbd = null;
@@ -334,12 +334,12 @@
                     <div class="results-content">
                         <div class="info-row">
                             <div class="info-label">PRODUCT</div>
-                            <div class="info-value">${parsed.product}</div>
+                            <div class="info-value">${parsed.product.toUpperCase()}</div>
                         </div>
                         <div class="info-row">
                             <div class="info-label">REFERENCE NUMBER</div>
                             <div class="info-value">${
-                                parsed.referenceNumber
+                                parsed.referenceNumber.toUpperCase()
                             }</div>
                         </div>
                         <div class="info-row">
@@ -391,7 +391,7 @@ style="fill:#FFFFFF; transform: scale(0.7);">
                 <div style="width: 50% !important;">
                     <p >Reference Number</p>
                     <div  >${
-                        parsed.referenceNumber
+                        parsed.referenceNumber.toUpperCase()
                     }</div>
                 </div>
             </div>
@@ -403,7 +403,7 @@ style="fill:#FFFFFF; transform: scale(0.7);">
                 
                 <p style="width: 50%;">Product</p>
                 <p style="width: 50%;" >
-                    ${parsed.product}
+                    ${parsed.product.toUpperCase()}
                 </p>
             </div>
             <div style="display: flex; align-items: center; width: 100%; padding: 1rem 0px">
