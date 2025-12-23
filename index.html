@@ -8,6 +8,7 @@
         <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
     </head>
     <body>
+        <div id="error-display"></div>
         <div id="results-page" class="results-container" style="display: block">
             <div id="results-display"></div>
         </div>
@@ -37,7 +38,7 @@
                     <input
                         type="text"
                         id="reference-input"
-                        placeholder="Scan or type your reference number"
+                        placeholder="Type your reference number"
                         required
                     />
                     <span class="helper-text"

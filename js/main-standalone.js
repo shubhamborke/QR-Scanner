@@ -258,23 +258,24 @@
                 form.addEventListener("submit", (e) => {
                     e.preventDefault();
                     const qrData = input.value.trim();
-                    if (qrData.length === 21) {
-                        showResults(qrData);
-                    } else {
-                        const resultsDiv =
-                            document.getElementById("results-page");
-                        resultsDiv.style.display = "block";
+                    const resultsDiv =
+                    document.getElementById("error-display");
+                    resultsDiv.style.display = "block";
+                    if (qrData.length < 21 || qrData.length > 25) {
                         if (resultsDiv) {
                             resultsDiv.innerHTML = `
                         <div class="error-message">
                             <p>Invalid QR code data. Please try again.</p>
-                        </div>
-                    `;
+                            </div>
+                            `;
                             resultsDiv.scrollIntoView({
                                 behavior: "smooth",
                                 block: "start",
                             });
                         }
+                    } else {
+                        resultsDiv.style.display = "none";
+                        showResults(qrData);
                     }
                 });
             }
@@ -298,7 +299,7 @@
                 if (resultsDiv) {
                     resultsDiv.innerHTML = html;
                 }
-
+                
                 // Show results page, hide landing page
                 document.getElementById("landing-page").style.display = "none";
                 document.getElementById("results-page").style.display = "block";
@@ -334,7 +335,7 @@
                     <div class="results-content">
                         <div class="info-row">
                             <div class="info-label">PRODUCT</div>
-                            <div class="info-value">${parsed.product.toUpperCase()}</div>
+                            <div class="info-value" style="font-size: 1.6rem;">${parsed.product.toUpperCase()}</div>
                         </div>
                         <div class="info-row">
                             <div class="info-label">REFERENCE NUMBER</div>
@@ -358,11 +359,12 @@
                             }</div>
                             <div class="info-value">${MANUFACTURER.city}</div>
                         </div>
-                        <button onclick="goHome()" class="btn btn-primary btn-home" style="width: fit-content; background: #83B241; font-family: 'New Spirit'; height: 3rem">
+                        <div style="display: flex; align-items: center; justify-content: center;margin-top: 1rem; border-top: 1px solid #eee;">
+                        <button onclick="goHome()" class="btn btn-primary btn-home" style="width: fit-content; background: #83B241; font-family: 'New Spirit'; height: 2.5rem">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="108" viewBox="0 0 32 32"
-style="fill:#FFFFFF; transform: scale(0.7);">
+style="fill:#FFFFFF; width: 1.4rem;">
 <path d="M 16 2.59375 L 15.28125 3.28125 L 2.28125 16.28125 L 3.71875 17.71875 L 5 16.4375 L 5 28 L 14 28 L 14 18 L 18 18 L 18 28 L 27 28 L 27 16.4375 L 28.28125 17.71875 L 29.71875 16.28125 L 16.71875 3.28125 Z M 16 5.4375 L 25 14.4375 L 25 26 L 20 26 L 20 16 L 12 16 L 12 26 L 7 26 L 7 14.4375 Z"></path>
-</svg> Scan More</button>
+</svg> Scan More</button></div>
                     </div>
                 </div>
             `;
@@ -402,7 +404,7 @@ style="fill:#FFFFFF; transform: scale(0.7);">
             <div style="display: flex; align-items: center; width: 100%; ">
                 
                 <p style="width: 50%;">Product</p>
-                <p style="width: 50%;" >
+                <p style="width: 50%; font-size: 1.6rem" >
                     ${parsed.product.toUpperCase()}
                 </p>
             </div>
