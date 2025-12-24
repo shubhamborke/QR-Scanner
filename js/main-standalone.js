@@ -339,19 +339,19 @@
                         </div>
                         <div class="info-row">
                             <div class="info-label">REFERENCE NUMBER</div>
-                            <div class="info-value">${
+                            <div class="info-value" style="font-size: 1.6rem;">${
                                 parsed.referenceNumber.toUpperCase()
                             }</div>
                         </div>
                         <div class="info-row">
                             <div class="info-label">BEST BEFORE DATE</div>
-                            <div class="info-value">${
+                            <div class="info-value" style="font-size: 1.6rem;">${
                                 parsed.bbdFormatted || "N/A"
                             }</div>
                         </div>
                         <div class="info-row manufacturer-info">
                             <div class="info-label">Manufactured By</div>
-                            <div class="info-value">
+                            <div class="info-value" style="font-size: 1.6rem;">
                                 ${MANUFACTURER.name}
                             </div>
                             <div class="info-value" style="margin-top: 10px;">${
