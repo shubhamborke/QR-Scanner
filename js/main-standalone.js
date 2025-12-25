@@ -157,7 +157,7 @@
                             config,
                             {
                                 fps: 10,
-                                qrbox: { width: 250, height: 250 },
+                                // qrbox: { width: 250, height: 250 },
                             },
                             (decodedText) => {
                                 console.log("QR Code scanned:", decodedText);
