@@ -413,7 +413,7 @@ style="fill:#FFFFFF; width: 1.4rem;">
                     <p style="width: 50%;">
                         Best Before Date
                     </p>
-                    <p style="width: 50%;" >
+                    <p style="width: 50%; font-size: 1.6rem" >
                         ${parsed.bbdFormatted || "N/A"}
                     </p>
                 </div>
