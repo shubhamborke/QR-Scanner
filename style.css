@@ -18,6 +18,8 @@ body {
     sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
 }
 
 :root {
@@ -166,11 +168,8 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 5px 0;
 }
 
-/* Results Page Styles */
 .results-container {
-  max-width: 900px;
-  /* margin: 40px auto; */
-  /* padding: 20px; */
+
 }
 
 .results-card {
